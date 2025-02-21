@@ -19,7 +19,7 @@
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Core/.NET Standard/.NET 5.0+</FrameworkVersion>
     <OutputPath>.\Help\</OutputPath>
-    <HtmlHelpName>FolkerKinzel_Helpers.Reference.en</HtmlHelpName>
+    <HtmlHelpName>FolkerKinzel.Helpers.Reference.en</HtmlHelpName>
     <Language>en-US</Language>
     <TransformComponentArguments>
       <Argument Key="logoFile" Value="Help.png" xmlns="" />
@@ -33,16 +33,16 @@
     <DocumentationSources>
       <DocumentationSource sourceFile="..\FolkerKinzel.Helpers\FolkerKinzel.Helpers.csproj" xmlns="" />
     </DocumentationSources>
-    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
-    <SyntaxFilters>Standard</SyntaxFilters>
-    <PresentationStyle>VS2013</PresentationStyle>
+    <HelpFileFormat>OpenXml</HelpFileFormat>
+    <SyntaxFilters>C#</SyntaxFilters>
+    <PresentationStyle>OpenXML</PresentationStyle>
     <CleanIntermediates>True</CleanIntermediates>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
     <IndentHtml>False</IndentHtml>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
-    <HelpTitle>FolkerKinzel_Helpers</HelpTitle>
+    <HelpTitle>FolkerKinzel.Helpers</HelpTitle>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <NamingMethod>Guid</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
@@ -53,7 +53,8 @@
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="FolkerKinzel.Helpers" isDocumented="True" xmlns="">Helper classes</NamespaceSummaryItem>
-<NamespaceSummaryItem name="FolkerKinzel.Helpers.Polyfills" isDocumented="True" xmlns="">Polyfills</NamespaceSummaryItem></NamespaceSummaries>
+      <NamespaceSummaryItem name="FolkerKinzel.Helpers.Polyfills" isDocumented="True" xmlns="">Polyfills</NamespaceSummaryItem>
+    </NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
