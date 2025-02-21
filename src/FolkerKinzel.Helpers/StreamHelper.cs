@@ -2,6 +2,9 @@
 
 namespace FolkerKinzel.Helpers;
 
+/// <summary>
+/// Helper class for <see cref="Stream"/> operations.
+/// </summary>
 public static class StreamHelper
 {
     /// <summary> Initializes a <see cref="StreamReader" /> instance. </summary>
@@ -56,7 +59,7 @@ public static class StreamHelper
     /// <param name="textEncoding">The text encoding to be used to write the CSV file
     /// or <c>null</c> for <see cref="Encoding.UTF8" />.</param>
     /// <param name="newLine">The line terminator string to be used, or <c>null</c> for 
-    /// <see cref="Environment.NewLine"/>.
+    /// <see cref="Environment.NewLine"/>.</param>
     /// <returns> The newly created <see cref="StreamWriter" /> instance. </returns>
     /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is <c>null</c>.</exception>
     /// <exception cref="ArgumentException"> <paramref name="filePath" /> is not a valid
