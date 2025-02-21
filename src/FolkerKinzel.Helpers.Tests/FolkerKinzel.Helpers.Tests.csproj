@@ -37,8 +37,44 @@
 
   <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
-    <Using Include="FolkerKinzel.Helpers"/>
-    <Using Include="FolkerKinzel.Helpers.Polyfills"/>
+    <Using Include="FolkerKinzel.Helpers" />
+    <Using Include="FolkerKinzel.Helpers.Polyfills" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\fkinz\source\repos\FolkerKinzel.Helpers\src\FolkerKinzel.Helpers.Tests\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\fkinz\source\repos\FolkerKinzel.Helpers\src\FolkerKinzel.Helpers.Tests\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Res.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(TargetFramework)' == 'net9.0'">
+		<Exec Command="@echo Project Directory: $(ProjectDir)" />
+	</Target>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(TargetFramework)' == 'net9.0'">
+		<Exec Command="echo $(ProjectDir) &gt; &quot;$(ProjectDir)\Resources\ProjDir.txt&quot;" />
+	</Target>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(TargetFramework)' == 'net9.0'">
+    <Exec Command="@echo Project Directory: $(ProjectDir)" />
+  </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(TargetFramework)' == 'net9.0'">
+    <Exec Command="echo $(ProjectDir) &gt; &quot;$(ProjectDir)\Resources\ProjDir.txt&quot;" />
+  </Target>
 
 </Project>
