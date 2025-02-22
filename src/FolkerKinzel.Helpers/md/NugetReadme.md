@@ -4,4 +4,4 @@
 
 Helper Classes
 
-[Project Reference and Release Notes](https://github.com/FolkerKinzel/Helpers/releases/tag/v1.0.0)
+[Project Reference and Release Notes](https://github.com/FolkerKinzel/Helpers/releases/tag/v1.0.1)

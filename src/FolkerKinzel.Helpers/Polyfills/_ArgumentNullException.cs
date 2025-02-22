@@ -13,10 +13,10 @@ public static class _ArgumentNullException
     /// <param name="paramName">The name of the checked parameter.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ThrowIfNull([NotNull] object? argument, string? paramName)
-#if NET462 || NET5_0 || NETSTANDARD2_0 || NETSTANDARD2_1
-    { if (argument is null) { throw new ArgumentNullException(paramName); } }
-#else
+#if NET6_0_OR_GREATER
         => ArgumentNullException.ThrowIfNull(argument, paramName);
+#else
+    { if (argument is null) { throw new ArgumentNullException(paramName); } }
 #endif
 }
 

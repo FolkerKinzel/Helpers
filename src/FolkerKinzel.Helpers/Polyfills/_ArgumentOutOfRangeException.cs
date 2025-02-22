@@ -7,29 +7,31 @@
 public static class _ArgumentOutOfRangeException
 {
     /// <summary>
-    /// Throws an <see cref="ArgumentOutOfRangeException"/> if <paramref name="argument"/> is negative.
+    /// Throws an <see cref="ArgumentOutOfRangeException"/> if <paramref name="argument"/>
+    /// is negative.
     /// </summary>
     /// <param name="argument">The argument to check.</param>
     /// <param name="paramName">The name of the checked parameter.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ThrowIfNegative(int argument, string? paramName)
-#if NET462 || NETSTANDARD2_0 || NETSTANDARD2_1
-    { if (argument < 0) { throw new ArgumentOutOfRangeException(paramName); } }
-#else
+#if NET8_0_OR_GREATER
         => ArgumentOutOfRangeException.ThrowIfNegative(argument, paramName);
+#else
+    { if (argument < 0) { throw new ArgumentOutOfRangeException(paramName); } }
 #endif
 
     /// <summary>
-    /// Throws an <see cref="ArgumentOutOfRangeException"/> if <paramref name="argument"/> is negative or zero.
+    /// Throws an <see cref="ArgumentOutOfRangeException"/> if <paramref name="argument"/>
+    /// is negative or zero.
     /// </summary>
     /// <param name="argument">The argument to check.</param>
     /// <param name="paramName">The name of the checked parameter.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ThrowIfNegativeOrZero(int argument, string? paramName)
-#if NET462 || NETSTANDARD2_0 || NETSTANDARD2_1
-    { if (argument < 1) { throw new ArgumentOutOfRangeException(paramName); } }
-#else
+#if NET8_0_OR_GREATER
         => ArgumentOutOfRangeException.ThrowIfNegativeOrZero(argument, paramName);
+#else
+    { if (argument < 1) { throw new ArgumentOutOfRangeException(paramName); } }
 #endif
 }
 
