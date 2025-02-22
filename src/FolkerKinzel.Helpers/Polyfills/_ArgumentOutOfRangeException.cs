@@ -12,7 +12,9 @@ public static class _ArgumentOutOfRangeException
     /// </summary>
     /// <param name="argument">The argument to check.</param>
     /// <param name="paramName">The name of the checked parameter.</param>
+#if NET8_0_OR_GREATER
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
     public static void ThrowIfNegative(int argument, string? paramName)
 #if NET8_0_OR_GREATER
         => ArgumentOutOfRangeException.ThrowIfNegative(argument, paramName);
@@ -26,7 +28,9 @@ public static class _ArgumentOutOfRangeException
     /// </summary>
     /// <param name="argument">The argument to check.</param>
     /// <param name="paramName">The name of the checked parameter.</param>
+#if NET8_0_OR_GREATER
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
     public static void ThrowIfNegativeOrZero(int argument, string? paramName)
 #if NET8_0_OR_GREATER
         => ArgumentOutOfRangeException.ThrowIfNegativeOrZero(argument, paramName);

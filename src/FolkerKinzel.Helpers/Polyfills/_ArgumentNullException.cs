@@ -11,7 +11,9 @@ public static class _ArgumentNullException
     /// </summary>
     /// <param name="argument">The argument to check.</param>
     /// <param name="paramName">The name of the checked parameter.</param>
+#if NET6_0_OR_GREATER
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
     public static void ThrowIfNull([NotNull] object? argument, string? paramName)
 #if NET6_0_OR_GREATER
         => ArgumentNullException.ThrowIfNull(argument, paramName);
