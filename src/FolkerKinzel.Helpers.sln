@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolkerKinzel.Helpers.Tests"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "FolkerKinzel.Helpers.Reference.en", "FolkerKinzel.Helpers.Reference.en\FolkerKinzel.Helpers.Reference.en.shfbproj", "{E8F7A7FF-FEF5-4180-AA04-52FBD2897374}"
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "FolkerKinzel.Helpers.Reference.Website", "FolkerKinzel.Helpers.Reference.Website\FolkerKinzel.Helpers.Reference.Website.shfbproj", "{E4711A44-B17D-4E9E-80AD-BAF358E9BBC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{A858BC06-9C34-F867-EAB7-5380A375E03C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8F7A7FF-FEF5-4180-AA04-52FBD2897374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8F7A7FF-FEF5-4180-AA04-52FBD2897374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4711A44-B17D-4E9E-80AD-BAF358E9BBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4711A44-B17D-4E9E-80AD-BAF358E9BBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

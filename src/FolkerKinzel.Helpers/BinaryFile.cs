@@ -104,24 +104,31 @@ public static class BinaryFile
     /// Opens a file.
     /// </summary>
     /// <param name="filePath">The file path.</param>
-    /// <param name="fileMode">The file mode.</param>
-    /// <param name="fileAccess">The file access.</param>
-    /// <param name="fileShare">The file share mode.</param>
+    /// <param name="mode">The file mode.</param>
+    /// <param name="access">The file access.</param>
+    /// <param name="share">The file share mode.</param>
     /// <returns>A newly created <see cref="FileStream"/>.</returns>
+    /// 
     /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is <c>null</c>.
     /// </exception>
     /// <exception cref="ArgumentException"> <paramref name="filePath" /> is not a valid
     /// file path.</exception>
     /// <exception cref="IOException">I/O error.</exception>
+    /// <exception cref="ArgumentOutOfRangeException"><paramref name="mode"/> contains an 
+    /// invalid value.</exception>
     [ExcludeFromCodeCoverage]
-    private static FileStream Open(string filePath,
-                                   FileMode fileMode,
-                                   FileAccess fileAccess,
-                                   FileShare fileShare)
+    public static FileStream Open(string filePath,
+                                  FileMode mode,
+                                  FileAccess access,
+                                  FileShare share)
     {
         try
         {
-            return new FileStream(filePath, fileMode, fileAccess, fileShare);
+            return new FileStream(filePath, mode, access, share);
+        }
+        catch(ArgumentOutOfRangeException)
+        {
+            throw;
         }
         catch (ArgumentNullException)
         {
