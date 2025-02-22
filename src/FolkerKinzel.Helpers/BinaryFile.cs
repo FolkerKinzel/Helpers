@@ -99,4 +99,57 @@ public static class BinaryFile
             throw new IOException(e.Message, e);
         }
     }
+
+    /// <summary>
+    /// Opens a file.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <param name="fileMode">The file mode.</param>
+    /// <param name="fileAccess">The file access.</param>
+    /// <param name="fileShare">The file share mode.</param>
+    /// <returns>A newly created <see cref="FileStream"/>.</returns>
+    /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is <c>null</c>.
+    /// </exception>
+    /// <exception cref="ArgumentException"> <paramref name="filePath" /> is not a valid
+    /// file path.</exception>
+    /// <exception cref="IOException">I/O error.</exception>
+    [ExcludeFromCodeCoverage]
+    private static FileStream Open(string filePath,
+                                   FileMode fileMode,
+                                   FileAccess fileAccess,
+                                   FileShare fileShare)
+    {
+        try
+        {
+            return new FileStream(filePath, fileMode, fileAccess, fileShare);
+        }
+        catch (ArgumentNullException)
+        {
+            throw new ArgumentNullException(nameof(filePath));
+        }
+        catch (ArgumentException e)
+        {
+            throw new ArgumentException(e.Message, nameof(filePath), e);
+        }
+        catch (UnauthorizedAccessException e)
+        {
+            throw new IOException(e.Message, e);
+        }
+        catch (NotSupportedException e)
+        {
+            throw new ArgumentException(e.Message, nameof(filePath), e);
+        }
+        catch (System.Security.SecurityException e)
+        {
+            throw new IOException(e.Message, e);
+        }
+        catch (PathTooLongException e)
+        {
+            throw new ArgumentException(e.Message, nameof(filePath), e);
+        }
+        catch (Exception e)
+        {
+            throw new IOException(e.Message, e);
+        }
+    }
 }
