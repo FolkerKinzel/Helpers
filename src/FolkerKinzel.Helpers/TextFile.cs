@@ -67,7 +67,8 @@ public static class TextFile
     /// <returns> The newly created <see cref="StreamWriter" /> instance. </returns>
     /// 
     /// 
-    /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is <c>null</c>.</exception>
+    /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is <c>null</c>.
+    /// </exception>
     /// <exception cref="ArgumentException"> <paramref name="filePath" /> is not a valid
     /// file path.</exception>
     /// <exception cref="IOException">I/O-Error</exception>

@@ -1,10 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FolkerKinzel.Helpers.Tests;
 
@@ -16,27 +11,27 @@ public class TextFileTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void InitStreamWriterTest1()
+    public void OpenWriteTest1()
     {
         using StreamWriter writer = TextFile.OpenWrite(null!, null, null, false);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void InitStreamWriterTest2()
+    public void OpenWriteTest2()
     {
         using StreamWriter writer = TextFile.OpenWrite("", null, null, false);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void InitStreamWriterTest3()
+    public void OpenWriteTest3()
     {
         using StreamWriter writer = TextFile.OpenWrite("  ", null, null, false);
     }
 
     [TestMethod]
-    public void InitStreamWriterTest4()
+    public void OpenWriteTest4()
     {
         string path = Path.Combine(TestContext.TestRunResultsDirectory!, "InitStreamWriterTest4.txt");
         using StreamWriter writer = TextFile.OpenWrite(path, null, null, false);
@@ -46,7 +41,7 @@ public class TextFileTests
     }
 
     [TestMethod]
-    public void InitStreamWriterTest5()
+    public void OpenWriteTest5()
     {
         string path = Path.Combine(TestContext.TestRunResultsDirectory!, "InitStreamWriterTest5.txt");
         using (StreamWriter writer = TextFile.OpenWrite(path, Encoding.Unicode, "::", false))
@@ -68,27 +63,27 @@ public class TextFileTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void InitStreamReaderTest1()
+    public void OpenReadTest1()
     {
         using StreamReader reader = TextFile.OpenRead(null!, null);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void InitStreamReaderTest2()
+    public void OpenReadTest2()
     {
         using StreamReader reader = TextFile.OpenRead("", null);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void InitStreamReaderTest3()
+    public void OpenReadTest3()
     {
         using StreamReader reader = TextFile.OpenRead("  ", null);
     }
 
     [TestMethod]
-    public void InitStreamReaderTest4()
+    public void OpenReadTest4()
     {
         using StreamReader reader = TextFile.OpenRead(TestFiles.TestTxt, null);
         Assert.IsNotNull(reader);
@@ -96,7 +91,7 @@ public class TextFileTests
     }
 
     [TestMethod]
-    public void InitStreamReaderTest5()
+    public void OpenReadTest5()
     {
         using StreamReader reader = TextFile.OpenRead(TestFiles.TestTxt, Encoding.Unicode);
         Assert.IsNotNull(reader);

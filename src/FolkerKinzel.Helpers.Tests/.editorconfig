@@ -283,3 +283,6 @@ dotnet_diagnostic.CA1515.severity = none
 
 # CA1810: Initialize reference type static fields inline
 dotnet_diagnostic.CA1810.severity = none
+
+# IDE0130: Namespace does not match folder structure
+dotnet_diagnostic.IDE0130.severity = none
