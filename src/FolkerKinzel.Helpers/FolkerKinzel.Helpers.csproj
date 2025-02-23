@@ -14,7 +14,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <PackageReleaseNotes>https://github.com/FolkerKinzel/Helpers/releases/tag/v1.1.0</PackageReleaseNotes>
     <PackageTags>C#</PackageTags>
-    <Description>.NET library containing helper classes</Description>
+    <Description>.NET library containing helper classes and polyfills</Description>
     <Authors>Folker Kinzel</Authors>
     <Copyright>Copyright © 2025 Folker Kinzel</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
