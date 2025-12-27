@@ -10,9 +10,8 @@ public class ArgumentNullExceptionTests
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void ThrowIfNullTest2()
     {
-        _ArgumentNullException.ThrowIfNull(null, "paramName");
+        Assert.ThrowsExactly<ArgumentNullException>(() => _ArgumentNullException.ThrowIfNull(null, "paramName"));
     }
 }

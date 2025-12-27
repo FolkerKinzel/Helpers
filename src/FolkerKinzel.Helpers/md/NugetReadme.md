@@ -2,4 +2,4 @@
 
 ## Helper Classes and Polyfills
 
-[Project Reference and Release Notes](https://github.com/FolkerKinzel/Helpers/releases/tag/v1.1.0)
+[Project Reference and Release Notes](https://github.com/FolkerKinzel/Helpers/releases/tag/v1.1.1)

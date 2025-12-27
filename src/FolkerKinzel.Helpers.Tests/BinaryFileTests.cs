@@ -11,32 +11,28 @@ public class BinaryFileTests
     public TestContext? TestContext { get; set; }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void SaveTest1()
     {
-        BinaryFile.Save(null!, []);
+        Assert.ThrowsExactly<ArgumentNullException>(() => BinaryFile.Save(null!, []));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void SaveTest2()
     {
         string path = Path.Combine(TestContext.TestRunResultsDirectory!, "SaveTest2.bin");
-        BinaryFile.Save(path, null!);
+        Assert.ThrowsExactly<ArgumentNullException>(() => BinaryFile.Save(path, null!));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
     public void SaveTest3()
     {
-        BinaryFile.Save("", []);
+        Assert.ThrowsExactly<ArgumentException>(() => BinaryFile.Save("", []));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
     public void SaveTest4()
     {
-        BinaryFile.Save("   ", []);
+        Assert.ThrowsExactly<ArgumentException>(() => BinaryFile.Save("   ", []));
     }
 
     [TestMethod]
@@ -50,43 +46,45 @@ public class BinaryFileTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentNullException))]
-    public void LoadTest1() => _ = BinaryFile.Load(null!);
+    public void LoadTest1()
+    {
+        Assert.ThrowsExactly<ArgumentNullException>(() => BinaryFile.Load(null!));
+    }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
-    public void LoadTest2() => _ = BinaryFile.Load("");
+    public void LoadTest2()
+    {
+        Assert.ThrowsExactly<ArgumentException>(() => BinaryFile.Load(""));
+    }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
-    public void LoadTest3() => _ = BinaryFile.Load("   ");
+    public void LoadTest3()
+    {
+        Assert.ThrowsExactly<ArgumentException>(() => BinaryFile.Load("   "));
+    }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void OpenTest1()
     {
-        using FileStream stream = BinaryFile.Open(null!, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+        Assert.ThrowsExactly<ArgumentNullException>(() => BinaryFile.Open(null!, FileMode.Create, FileAccess.Write, FileShare.ReadWrite));
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentException))]
     public void OpenTest2()
     {
-        using FileStream stream = BinaryFile.Open("", FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+        Assert.ThrowsExactly<ArgumentException>(() => BinaryFile.Open("", FileMode.Create, FileAccess.Write, FileShare.ReadWrite));
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentException))]
     public void OpenTest3()
     {
-        using FileStream stream = BinaryFile.Open("  ", FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+        Assert.ThrowsExactly<ArgumentException>(() => BinaryFile.Open("  ", FileMode.Create, FileAccess.Write, FileShare.ReadWrite));
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(IOException))]
     public void OpenTest4()
     {
-        using FileStream stream = BinaryFile.Open("nixDa", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        Assert.ThrowsExactly<IOException>(() => BinaryFile.Open("nixDa", FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
     }
 
     [TestMethod()]
@@ -103,11 +101,10 @@ public class BinaryFileTests
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void OpenTest6()
     {
         string path = Path.Combine(TestContext.TestRunResultsDirectory!, "OpenTest6.bin");
-        using FileStream stream = BinaryFile.Open(path, (FileMode)4711, FileAccess.Write, FileShare.None);
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => BinaryFile.Open(path, (FileMode)4711, FileAccess.Write, FileShare.None));
         
     }
 }

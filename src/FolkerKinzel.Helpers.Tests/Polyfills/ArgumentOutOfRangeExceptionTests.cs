@@ -10,10 +10,9 @@ public class ArgumentOutOfRangeExceptionTests
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ThrowIfNegativeTest2()
     {
-        _ArgumentOutOfRangeException.ThrowIfNegative(-1, "paramName");
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => _ArgumentOutOfRangeException.ThrowIfNegative(-1, "paramName"));
     }
 
     [TestMethod()]
@@ -23,16 +22,14 @@ public class ArgumentOutOfRangeExceptionTests
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ThrowIfNegativeOrZeroTest2()
     {
-        _ArgumentOutOfRangeException.ThrowIfNegativeOrZero(-1, "paramName");
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => _ArgumentOutOfRangeException.ThrowIfNegativeOrZero(-1, "paramName"));
     }
 
     [TestMethod()]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ThrowIfNegativeOrZeroTest3()
     {
-        _ArgumentOutOfRangeException.ThrowIfNegativeOrZero(0, "paramName");
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => _ArgumentOutOfRangeException.ThrowIfNegativeOrZero(0, "paramName"));
     }
 }

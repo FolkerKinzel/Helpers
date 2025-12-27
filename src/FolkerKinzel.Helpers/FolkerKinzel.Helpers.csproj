@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <!-- 👇 NET8.0 and NET6.0 MUST be supported als long as FolkerKinzel.Strings supports them -->
-    <TargetFrameworks>net10.0;net9.0;net8.0;net6.0;netstandard2.1;netstandard2.0;net462</TargetFrameworks>
-    <LangVersion>13.0</LangVersion>
+    <TargetFrameworks>net9.0;net8.0;net10.0;net6.0;netstandard2.1;netstandard2.0;net462</TargetFrameworks>
+    <LangVersion>14.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NeutralLanguage>en</NeutralLanguage>
     <!-- .nuget-Package: -->
     <PackageId>FolkerKinzel.Helpers</PackageId>
     <Product>FolkerKinzel.Helpers</Product>
-    <Version>1.1.0</Version>
-    <FileVersion>1.1.0.7</FileVersion>
+    <Version>1.1.1</Version>
+    <FileVersion>1.1.1.6</FileVersion>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <PackageReleaseNotes>https://github.com/FolkerKinzel/Helpers/releases/tag/v1.1.0</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/FolkerKinzel/Helpers/releases/tag/v1.1.1</PackageReleaseNotes>
     <PackageTags>C#</PackageTags>
     <Description>C# library containing helper classes and polyfills</Description>
     <Authors>Folker Kinzel</Authors>

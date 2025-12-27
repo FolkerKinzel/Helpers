@@ -10,24 +10,21 @@ public class TextFileTests
     public TestContext? TestContext { get; set; }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void OpenWriteTest1()
     {
-        using StreamWriter writer = TextFile.OpenWrite(null!, null, null, false);
+        Assert.ThrowsExactly<ArgumentNullException>(() => TextFile.OpenWrite(null!, null, null, false));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
     public void OpenWriteTest2()
     {
-        using StreamWriter writer = TextFile.OpenWrite("", null, null, false);
+        Assert.ThrowsExactly<ArgumentException>(() => TextFile.OpenWrite("", null, null, false));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
     public void OpenWriteTest3()
     {
-        using StreamWriter writer = TextFile.OpenWrite("  ", null, null, false);
+        Assert.ThrowsExactly<ArgumentException>(() => TextFile.OpenWrite("  ", null, null, false));
     }
 
     [TestMethod]
@@ -62,24 +59,21 @@ public class TextFileTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void OpenReadTest1()
     {
-        using StreamReader reader = TextFile.OpenRead(null!, null);
+        Assert.ThrowsExactly<ArgumentNullException>(() => TextFile.OpenRead(null!, null));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
     public void OpenReadTest2()
     {
-        using StreamReader reader = TextFile.OpenRead("", null);
+        Assert.ThrowsExactly<ArgumentException>(() => TextFile.OpenRead("", null));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
     public void OpenReadTest3()
     {
-        using StreamReader reader = TextFile.OpenRead("  ", null);
+        Assert.ThrowsExactly<ArgumentException>(() => TextFile.OpenRead("  ", null));
     }
 
     [TestMethod]
